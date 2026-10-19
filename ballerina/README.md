@@ -74,5 +74,5 @@ bal run
 
 The `PocketSmith` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/ballerina-platform/module-ballerinax-pocketsmith/tree/main/examples/), covering the following use cases:
 
-* [Monthly budget review](../examples/monthly_budget_review/monthly_budget_review.md) - lists a user's accounts and compares forecast and actual spending per category for a date range.
-* [Uncategorised transaction cleanup](../examples/uncategorised_transaction_cleanup/uncategorised_transaction_cleanup.md) - finds uncategorised transactions and optionally assigns them to a chosen category.
+* [Monthly budget review](https://github.com/ballerina-platform/module-ballerinax-pocketsmith/tree/main/examples/monthly_budget_review/monthly_budget_review.md) - lists a user's accounts and compares forecast and actual spending per category for a date range.
+* [Uncategorised transaction cleanup](https://github.com/ballerina-platform/module-ballerinax-pocketsmith/tree/main/examples/uncategorised_transaction_cleanup/uncategorised_transaction_cleanup.md) - finds uncategorised transactions and optionally assigns them to a chosen category.

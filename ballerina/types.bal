@@ -392,7 +392,7 @@ public type UpdateTransactionRequest record {
     string labels?;
 };
 
-public type UpdateTransactionResponse Transaction|TransactionSplitsResponse;
+public type UpdateTransactionResponse TransactionSplitsResponse|Transaction;
 
 public type Scenario record {
     # The date of the closing balance
@@ -805,8 +805,8 @@ public type TransactionAccount record {
 # Response when splits are provided
 public type TransactionSplitsResponse record {
     @jsondata:Name {value: "split_transactions"}
-    Transaction[] splitTransactions?;
-    Transaction 'transaction?;
+    Transaction[] splitTransactions;
+    Transaction 'transaction;
 };
 
 public type UpdateEventRequest record {

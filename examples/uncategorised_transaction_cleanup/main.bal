@@ -34,7 +34,11 @@ public function main() returns error? {
         if transactions.length() < 30 {
             break;
         }
-        page += 1;
+        // Categorised transactions drop out of the uncategorised filter, so in update mode
+        // the next batch is on page 1 again.
+        if !applyChanges {
+            page += 1;
+        }
     }
     io:println(string `Found ${found} uncategorised transactions, updated ${updated}`);
 }

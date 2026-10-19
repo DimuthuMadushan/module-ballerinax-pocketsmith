@@ -3583,10 +3583,10 @@
             "UpdateTransactionResponse": {
                 "oneOf": [
                     {
-                        "$ref": "#/components/schemas/Transaction"
+                        "$ref": "#/components/schemas/TransactionSplitsResponse"
                     },
                     {
-                        "$ref": "#/components/schemas/TransactionSplitsResponse"
+                        "$ref": "#/components/schemas/Transaction"
                     }
                 ]
             },
@@ -3920,6 +3920,10 @@
             },
             "TransactionSplitsResponse": {
                 "type": "object",
+                "required": [
+                    "transaction",
+                    "split_transactions"
+                ],
                 "properties": {
                     "split_transactions": {
                         "type": "array",

@@ -40,7 +40,7 @@ function testGetUser() returns error? {
     test:assertTrue(user?.login !is ());
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testUpdateUser() returns error? {
     User user = check pocketsmith->updateUser(userId, {name: "Jane Doe"});
     test:assertTrue(user?.id !is ());
@@ -52,7 +52,7 @@ function testListUserAccounts() returns error? {
     test:assertTrue(accounts.length() >= 0);
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testCreateUserAccount() returns error? {
     Account account = check pocketsmith->createUserAccount(userId, {
         title: "Everyday Checking",
@@ -63,19 +63,19 @@ function testCreateUserAccount() returns error? {
     test:assertTrue(account?.id !is ());
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testGetAccount() returns error? {
     Account account = check pocketsmith->getAccount(3001);
     test:assertTrue(account?.title !is ());
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testUpdateAccount() returns error? {
     Account account = check pocketsmith->updateAccount(3001, {title: "Renamed Checking"});
     test:assertTrue(account?.id !is ());
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testDeleteAccount() returns error? {
     Account account = check pocketsmith->createUserAccount(userId, {
         title: "Temporary Account",
@@ -92,7 +92,7 @@ function testListUserTransactions() returns error? {
     test:assertTrue(transactions.length() >= 0);
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testCreateTransactionAccountTransaction() returns error? {
     Transaction txn = check pocketsmith->createTransactionAccountTransaction(transactionAccountId, {
         payee: "Fresh Market",
@@ -102,7 +102,7 @@ function testCreateTransactionAccountTransaction() returns error? {
     test:assertTrue(txn?.id !is ());
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testGetTransaction() returns error? {
     UpdateTransactionResponse|error updated = pocketsmith->updateTransaction(5001, {note: "Updated note"});
     test:assertTrue(updated is Transaction);
@@ -110,7 +110,7 @@ function testGetTransaction() returns error? {
     test:assertTrue(txn is Transaction);
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testDeleteTransaction() returns error? {
     Transaction txn = check pocketsmith->createTransactionAccountTransaction(transactionAccountId, {
         payee: "Temporary Payee",
@@ -126,25 +126,25 @@ function testListUserCategories() returns error? {
     test:assertTrue(categories.length() >= 0);
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testCreateUserCategory() returns error? {
     Category category = check pocketsmith->createUserCategory(userId, {title: "Groceries"});
     test:assertTrue(category?.id !is ());
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testGetCategory() returns error? {
     Category category = check pocketsmith->getCategory(4001);
     test:assertTrue(category?.title !is ());
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testUpdateCategory() returns error? {
     Category category = check pocketsmith->updateCategory(4001, {title: "Food"});
     test:assertTrue(category?.id !is ());
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testDeleteCategory() returns error? {
     Category category = check pocketsmith->createUserCategory(userId, {title: "Temporary Category"});
     check pocketsmith->deleteCategory(check category?.id.ensureType());
@@ -156,7 +156,7 @@ function testListUserInstitutions() returns error? {
     test:assertTrue(institutions.length() >= 0);
 }
 
-@test:Config {groups: ["mock_tests"]}
+@test:Config {groups: ["mock_tests"], enable: !isLiveServer}
 function testCreateUserInstitution() returns error? {
     Institution institution = check pocketsmith->createUserInstitution(userId, {title: "First National Bank", currencyCode: "usd"});
     test:assertTrue(institution?.id !is ());

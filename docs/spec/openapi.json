@@ -2342,6 +2342,10 @@
                     {
                       "description": "Response when splits are provided",
                       "type": "object",
+                      "required": [
+                        "transaction",
+                        "split_transactions"
+                      ],
                       "properties": {
                         "transaction": {
                           "$ref": "#/components/schemas/Transaction"

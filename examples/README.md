@@ -9,7 +9,7 @@ The `ballerinax/pocketsmith` connector provides practical examples illustrating 
 
 ## Prerequisites
 
-1. A PocketSmith developer key (or OAuth 2.0 credentials) for the `ballerinax/pocketsmith` connector.
+1. A PocketSmith developer key for the `ballerinax/pocketsmith` connector. Both examples authenticate with it.
 2. A `Config.toml` in each example directory, as described in that example's document.
 
 ## Running an example
